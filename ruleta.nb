@@ -10,16 +10,14 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       157,          7]
-NotebookDataLength[      8683,        234]
-NotebookOptionsPosition[      8295,        215]
-NotebookOutlinePosition[      8671,        232]
-CellTagsIndexPosition[      8628,        229]
+NotebookDataLength[      7263,        196]
+NotebookOptionsPosition[      6985,        181]
+NotebookOutlinePosition[      7363,        198]
+CellTagsIndexPosition[      7320,        195]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
 Notebook[{
-
-Cell[CellGroupData[{
 Cell[BoxData[{
  RowBox[{
   RowBox[{"ClearAll", "[", "diskForPoint", "]"}], 
@@ -42,7 +40,11 @@ Cell[BoxData[{
       RowBox[{"Range", "[", "38", "]"}], "/.", 
       RowBox[{
        RowBox[{"_", "?", "NumericQ"}], "\[Rule]", "1"}]}], ",", 
-     RowBox[{"ChartLabels", "\[Rule]", "values"}]}], "]"}]}], 
+     RowBox[{"ChartLabels", "\[Rule]", "values"}], ",", 
+     RowBox[{"ChartStyle", "\[Rule]", 
+      RowBox[{"{", 
+       RowBox[{"Black", ",", "Red"}], "}"}]}], ",", 
+     RowBox[{"LabelStyle", "\[Rule]", "White"}]}], "]"}]}], 
   ";"}], "\[IndentingNewLine]", 
  RowBox[{
   RowBox[{"points", "=", 
@@ -107,7 +109,7 @@ Cell[BoxData[{
    RowBox[{"{", 
     RowBox[{
      RowBox[{"\"\<DiskRadius\>\"", "\[Rule]", "0.05"}], ",", 
-     RowBox[{"\"\<DiskColor\>\"", "\[Rule]", "Orange"}]}], "}"}]}], 
+     RowBox[{"\"\<DiskColor\>\"", "\[Rule]", "White"}]}], "}"}]}], 
   ";"}], "\[IndentingNewLine]", 
  RowBox[{
   RowBox[{
@@ -171,50 +173,14 @@ Cell[BoxData[{
    3.59491980519632*^9, 3.594920001107733*^9}, {3.594920031756727*^9, 
    3.594920515655818*^9}, {3.5949208097688227`*^9, 3.594921060748539*^9}, {
    3.594921098784514*^9, 3.594921159616901*^9}, {3.5949211992820787`*^9, 
-   3.594921374517647*^9}, {3.5949214235657377`*^9, 3.5949214857916203`*^9}}],
-
-Cell[BoxData[
- TagBox[
-  StyleBox[
-   DynamicModuleBox[{$CellContext`i$$ = 7, Typeset`show$$ = True, 
-    Typeset`bookmarkList$$ = {}, Typeset`bookmarkMode$$ = "Menu", 
-    Typeset`animator$$, Typeset`animvar$$ = 1, Typeset`name$$ = 
-    "\"untitled\"", Typeset`specs$$ = {{
-      Hold[$CellContext`i$$], 1, 38, 1}}, Typeset`size$$ = {
-    360., {178., 182.}}, Typeset`update$$ = 0, Typeset`initDone$$, 
-    Typeset`skipInitDone$$ = True, $CellContext`i$85638$$ = 0}, 
-    DynamicBox[Manipulate`ManipulateBoxes[
-     1, StandardForm, "Variables" :> {$CellContext`i$$ = 1}, 
-      "ControllerVariables" :> {
-        Hold[$CellContext`i$$, $CellContext`i$85638$$, 0]}, 
-      "OtherVariables" :> {
-       Typeset`show$$, Typeset`bookmarkList$$, Typeset`bookmarkMode$$, 
-        Typeset`animator$$, Typeset`animvar$$, Typeset`name$$, 
-        Typeset`specs$$, Typeset`size$$, Typeset`update$$, Typeset`initDone$$,
-         Typeset`skipInitDone$$}, "Body" :> Show[$CellContext`field, 
-        $CellContext`diskForPoint[
-         Part[$CellContext`allPoints, $CellContext`i$$]]], 
-      "Specifications" :> {{$CellContext`i$$, 1, 38, 1}}, "Options" :> {}, 
-      "DefaultOptions" :> {}],
-     ImageSizeCache->{405., {235., 240.}},
-     SingleEvaluation->True],
-    Deinitialization:>None,
-    DynamicModuleValues:>{},
-    SynchronousInitialization->True,
-    UnsavedVariables:>{Typeset`initDone$$},
-    UntrackedVariables:>{Typeset`size$$}], "Manipulate",
-   Deployed->True,
-   StripOnInput->False],
-  Manipulate`InterpretManipulate[1]]], "Output",
- CellChangeTimes->{{3.594921320854707*^9, 3.594921375456091*^9}, {
-  3.594921449405486*^9, 3.5949214866684237`*^9}}]
-}, Open  ]],
-
-Cell[BoxData["e"], "Input",
- CellChangeTimes->{3.5949210369332457`*^9}]
+   3.594921374517647*^9}, {3.5949214235657377`*^9, 3.5949214857916203`*^9}, {
+   3.5949918606034307`*^9, 3.594991868145877*^9}, {3.5949919189900837`*^9, 
+   3.594991934029727*^9}, {3.594992007506085*^9, 3.59499202071247*^9}, {
+   3.594992078650963*^9, 3.594992160889331*^9}, {3.594992265318756*^9, 
+   3.594992269019331*^9}, {3.594992312703165*^9, 3.594992313465547*^9}}]
 },
 WindowSize->{740, 860},
-WindowMargins->{{4, Automatic}, {Automatic, 4}},
+WindowMargins->{{Automatic, 185}, {Automatic, 4}},
 ShowSelection->True,
 FrontEndVersion->"9.0 for Mac OS X x86 (32-bit, 64-bit Kernel) (November 20, \
 2012)",
@@ -231,11 +197,7 @@ CellTagsIndex->{}
 *)
 (*NotebookFileOutline
 Notebook[{
-Cell[CellGroupData[{
-Cell[579, 22, 5963, 151, 250, "Input"],
-Cell[6545, 175, 1660, 34, 492, "Output"]
-}, Open  ]],
-Cell[8220, 212, 71, 1, 28, "Input"]
+Cell[557, 20, 6424, 159, 267, "Input"]
 }
 ]
 *)
