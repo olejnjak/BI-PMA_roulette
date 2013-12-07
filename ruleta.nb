@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       157,          7]
-NotebookDataLength[     15974,        396]
-NotebookOptionsPosition[     15655,        380]
-NotebookOutlinePosition[     16033,        397]
-CellTagsIndexPosition[     15990,        394]
+NotebookDataLength[     21462,        531]
+NotebookOptionsPosition[     21141,        515]
+NotebookOutlinePosition[     21519,        532]
+CellTagsIndexPosition[     21476,        529]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -35,8 +35,34 @@ Cell[BoxData[{
       RowBox[{"-", "1"}], "\[Rule]", "\"\<00\>\""}]}], "]"}]}], 
   ";"}], "\[IndentingNewLine]", 
  RowBox[{
+  RowBox[{"i", "=", "0"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"listOfVars", "=", 
+   RowBox[{"{", 
+    RowBox[{"\"\<Black\>\"", ",", "\"\<Red\>\""}], "}"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"score", "=", "100"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
   RowBox[{
-   RowBox[{"i", "=", "0"}], ";"}], 
+   RowBox[{"toBet", "[", "]"}], "=", 
+   RowBox[{"Max", "[", 
+    RowBox[{
+     RowBox[{"Dynamic", "[", 
+      RowBox[{"score", "-", 
+       RowBox[{"sumOfBets", "[", "]"}]}], "]"}], ",", "0"}], "]"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"Table", "[", 
+    RowBox[{
+     RowBox[{
+      SubscriptBox["bet", 
+       RowBox[{"listOfVars", "[", 
+        RowBox[{"[", "ite", "]"}], "]"}]], "=", "0"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"ite", ",", "1", ",", 
+       RowBox[{"Length", "[", "listOfVars", "]"}]}], "}"}]}], "]"}], ";"}], 
   "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
  RowBox[{
   RowBox[{
@@ -195,17 +221,6 @@ Cell[BoxData[{
         RowBox[{"Length", "[", "values", "]"}], ",", "2"}], "}"}]}], "]"}]}], 
    ";"}], "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
  RowBox[{
-  RowBox[{
-   RowBox[{
-    RowBox[{"bet", "[", 
-     RowBox[{"item", ":", 
-      RowBox[{"{", 
-       RowBox[{"number_", ",", "amount_", ",", "weight_"}], "}"}]}], "]"}], ":=", 
-    RowBox[{"bets", "=", 
-     RowBox[{"Append", "[", 
-      RowBox[{"bets", ",", "item"}], "]"}]}]}], ";"}], 
-  "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
- RowBox[{
   RowBox[{"field", "=", 
    RowBox[{"prepareField", "[", "]"}]}], ";"}], "\[IndentingNewLine]", 
  RowBox[{
@@ -299,7 +314,92 @@ Cell[BoxData[{
          RowBox[{"Mod", "[", 
           RowBox[{"i", ",", 
            RowBox[{"Length", "[", "values", "]"}]}], "]"}], "+", "1"}], "]"}],
-        "]"}]}]}], "\[IndentingNewLine]", "]"}]}], ";"}]}], "Input",
+        "]"}]}]}], "\[IndentingNewLine]", "]"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"prepareSliders", "[", "]"}], ":=", 
+   RowBox[{"Module", "[", 
+    RowBox[{
+     RowBox[{"{", "list", "}"}], ",", "\[IndentingNewLine]", 
+     RowBox[{"list", "=", 
+      RowBox[{"listOfVars", "/.", 
+       RowBox[{"a_String", "\[Rule]", 
+        RowBox[{"Row", "[", 
+         RowBox[{"{", 
+          RowBox[{"a", ",", 
+           RowBox[{"Slider", "[", 
+            RowBox[{
+             RowBox[{"Dynamic", "[", 
+              SubscriptBox["bet", "a"], "]"}], ",", 
+             RowBox[{"{", 
+              RowBox[{"0", ",", 
+               RowBox[{"Dynamic", "[", 
+                RowBox[{
+                 SubscriptBox["bet", "a"], "+", 
+                 RowBox[{"toBet", "[", "]"}]}], "]"}], ",", "1"}], "}"}], ",", 
+             RowBox[{"Appearance", "\[Rule]", "\"\<Labeled\>\""}]}], "]"}]}], 
+          "\[IndentingNewLine]", "}"}], "]"}]}]}]}]}], "\[IndentingNewLine]", 
+    "]"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"runWithBets", "[", "]"}], ":=", 
+   RowBox[{"Module", "[", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"number", ",", "s"}], "}"}], ",", "\[IndentingNewLine]", 
+     RowBox[{
+      RowBox[{"score", "=", 
+       RowBox[{"score", "-", 
+        RowBox[{"sumOfBets", "[", "]"}]}]}], ";", "\[IndentingNewLine]", 
+      RowBox[{"number", "=", 
+       RowBox[{"run", "[", "]"}]}], ";", "\[IndentingNewLine]", 
+      RowBox[{"s", "=", 
+       RowBox[{"examinateBets", "[", "number", "]"}]}], ";", 
+      "\[IndentingNewLine]", 
+      RowBox[{"score", "+=", "s"}], ";"}]}], "\[IndentingNewLine]", "]"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"examinateBets", "[", 
+    RowBox[{"number_", "?", 
+     RowBox[{"(", 
+      RowBox[{
+       RowBox[{
+        RowBox[{"Count", "[", 
+         RowBox[{
+          RowBox[{"redNumbers", "[", "]"}], ",", "#"}], "]"}], ">", "0"}], 
+       "&"}], ")"}]}], "]"}], ":=", 
+   RowBox[{
+    SubscriptBox["bet", "\"\<Red\>\""], "*", "2"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"examinateBets", "[", 
+    RowBox[{"number_", "?", 
+     RowBox[{"(", 
+      RowBox[{
+       RowBox[{
+        RowBox[{"Count", "[", 
+         RowBox[{
+          RowBox[{"blackNumbers", "[", "]"}], ",", "#"}], "]"}], ">", "0"}], 
+       "&"}], ")"}]}], "]"}], ":=", 
+   RowBox[{
+    SubscriptBox["bet", "\"\<Black\>\""], "*", "2"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"sumOfBets", "[", "]"}], ":=", 
+   RowBox[{"Total", "[", 
+    RowBox[{"Table", "[", 
+     RowBox[{
+      SubscriptBox["bet", 
+       RowBox[{"listOfVars", "[", 
+        RowBox[{"[", "ite", "]"}], "]"}]], ",", 
+      RowBox[{"{", 
+       RowBox[{"ite", ",", "1", ",", 
+        RowBox[{"Length", "[", "listOfVars", "]"}]}], "}"}]}], "]"}], "]"}]}],
+   ";"}]}], "Input",
  CellChangeTimes->{{3.594396742369816*^9, 3.594396767047278*^9}, {
    3.5943968079693832`*^9, 3.5943968898499537`*^9}, {3.594405577252213*^9, 
    3.5944056735309067`*^9}, {3.5944061723066072`*^9, 3.594406178058609*^9}, 
@@ -361,14 +461,44 @@ Cell[BoxData[{
    3.595252894562172*^9}, {3.595252988323235*^9, 3.595253043184228*^9}, {
    3.5952530772851133`*^9, 3.595253117448386*^9}, {3.5952533765954657`*^9, 
    3.595253414731895*^9}, {3.595253492043992*^9, 3.595253547653167*^9}, {
-   3.595253769039342*^9, 3.5952538301842957`*^9}}],
+   3.595253769039342*^9, 3.5952538301842957`*^9}, {3.5954077643758717`*^9, 
+   3.5954078160247583`*^9}, {3.5954078533053007`*^9, 3.595407941856785*^9}, {
+   3.5954079789511766`*^9, 3.595408027461903*^9}, {3.5954080730930433`*^9, 
+   3.595408139267167*^9}, {3.595408205940816*^9, 3.5954082128038797`*^9}, {
+   3.595408270286524*^9, 3.5954082773016987`*^9}, {3.595408375802783*^9, 
+   3.5954084051471653`*^9}, {3.5954084466398087`*^9, 3.595408525326743*^9}, {
+   3.595408604549616*^9, 3.595408612207714*^9}, {3.595408685518688*^9, 
+   3.5954086888533993`*^9}, {3.59540907271664*^9, 3.595409172141223*^9}, {
+   3.595409226158313*^9, 3.595409280992288*^9}, {3.595409501636868*^9, 
+   3.595409552129663*^9}, {3.595409587325728*^9, 3.595409587453453*^9}, {
+   3.595409633322646*^9, 3.595409652613027*^9}, {3.595409792815086*^9, 
+   3.595410027304942*^9}, {3.595410066268112*^9, 3.595410141307301*^9}, {
+   3.595410182365443*^9, 3.5954102844609747`*^9}, {3.595410334052478*^9, 
+   3.5954103988331823`*^9}, {3.595410631364904*^9, 3.595410638012857*^9}, {
+   3.595410696167005*^9, 3.5954107400163593`*^9}, {3.5954108334623003`*^9, 
+   3.595410838869361*^9}, {3.595410996799027*^9, 3.5954110019832087`*^9}, {
+   3.595411036316434*^9, 3.595411038109147*^9}, {3.595411166944813*^9, 
+   3.5954111782703943`*^9}, {3.5954112467525063`*^9, 3.595411247554728*^9}}],
 
 Cell[BoxData[{
+ RowBox[{"Row", "[", 
+  RowBox[{"{", 
+   RowBox[{
+    RowBox[{"InputField", "[", 
+     RowBox[{"\"\<Score: \>\"", ",", "String", ",", 
+      RowBox[{"Enabled", "\[Rule]", "False"}]}], "]"}], ",", 
+    RowBox[{"InputField", "[", 
+     RowBox[{
+      RowBox[{"Dynamic", "[", "score", "]"}], ",", 
+      RowBox[{"Enabled", "\[Rule]", "False"}]}], "]"}]}], "}"}], 
+  "]"}], "\[IndentingNewLine]", 
  RowBox[{"Dynamic", "[", 
   RowBox[{"roullette", "[", "i", "]"}], "]"}], "\[IndentingNewLine]", 
+ RowBox[{"sliders", "=", 
+  RowBox[{"prepareSliders", "[", "]"}]}], "\[IndentingNewLine]", 
  RowBox[{"Button", "[", 
   RowBox[{"\"\<Start\>\"", ",", 
-   RowBox[{"run", "[", "]"}], ",", 
+   RowBox[{"runWithBets", "[", "]"}], ",", 
    RowBox[{"Method", "\[Rule]", "\"\<Queued\>\""}]}], "]"}]}], "Input",
  CellChangeTimes->{{3.5951632098584127`*^9, 3.595163212788898*^9}, {
   3.595166585936372*^9, 3.595166600934824*^9}, {3.595251981990573*^9, 
@@ -376,7 +506,12 @@ Cell[BoxData[{
   3.595253197179122*^9, 3.595253225258404*^9}, {3.595253349351432*^9, 
   3.595253371490994*^9}, {3.59525342725239*^9, 3.595253433880705*^9}, {
   3.595253480527316*^9, 3.595253482741138*^9}, {3.595253711389826*^9, 
-  3.5952537166057167`*^9}}]
+  3.5952537166057167`*^9}, {3.595407918523102*^9, 3.59540792612366*^9}, {
+  3.595408148398222*^9, 3.595408156406453*^9}, {3.595408706143837*^9, 
+  3.595408819552981*^9}, {3.595408859032647*^9, 3.595408931641345*^9}, {
+  3.595409287958753*^9, 3.5954093095042458`*^9}, {3.595409393610529*^9, 
+  3.595409487827607*^9}, {3.595409561228611*^9, 3.595409563483329*^9}, {
+  3.5954097030785027`*^9, 3.59540970543027*^9}}]
 },
 WindowSize->{740, 860},
 WindowMargins->{{Automatic, 185}, {Automatic, 4}},
@@ -396,8 +531,8 @@ CellTagsIndex->{}
 *)
 (*NotebookFileOutline
 Notebook[{
-Cell[557, 20, 14359, 343, 862, "Input"],
-Cell[14919, 365, 732, 13, 46, "Input"]
+Cell[557, 20, 18966, 460, 1194, "Input"],
+Cell[19526, 482, 1611, 31, 97, "Input"]
 }
 ]
 *)
