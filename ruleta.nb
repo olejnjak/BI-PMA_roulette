@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       157,          7]
-NotebookDataLength[     22168,        551]
-NotebookOptionsPosition[     21847,        535]
-NotebookOutlinePosition[     22225,        552]
-CellTagsIndexPosition[     22182,        549]
+NotebookDataLength[     26035,        648]
+NotebookOptionsPosition[     25516,        626]
+NotebookOutlinePosition[     25894,        643]
+CellTagsIndexPosition[     25851,        640]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -59,7 +59,7 @@ Cell[BoxData[{
      RowBox[{
       SubscriptBox["bet", 
        RowBox[{"listOfVars", "[", 
-        RowBox[{"[", "ite", "]"}], "]"}]], "=", "0"}], ",", 
+        RowBox[{"[", "ite", "]"}], "]"}]], "=", "1"}], ",", 
      RowBox[{"{", 
       RowBox[{"ite", ",", "1", ",", 
        RowBox[{"Length", "[", "listOfVars", "]"}]}], "}"}]}], "]"}], ";"}], 
@@ -337,28 +337,27 @@ Cell[BoxData[{
  RowBox[{
   RowBox[{
    RowBox[{"prepareSliders", "[", "]"}], ":=", 
-   RowBox[{"Module", "[", 
-    RowBox[{
-     RowBox[{"{", "list", "}"}], ",", "\[IndentingNewLine]", 
-     RowBox[{"list", "=", 
-      RowBox[{"listOfVars", "/.", 
-       RowBox[{"a_String", "\[Rule]", 
-        RowBox[{"Row", "[", 
-         RowBox[{"{", 
-          RowBox[{"a", ",", 
-           RowBox[{"Slider", "[", 
-            RowBox[{
-             RowBox[{"Dynamic", "[", 
-              SubscriptBox["bet", "a"], "]"}], ",", 
-             RowBox[{"{", 
-              RowBox[{"0", ",", 
-               RowBox[{"Dynamic", "[", 
-                RowBox[{
-                 SubscriptBox["bet", "a"], "+", 
-                 RowBox[{"toBet", "[", "]"}]}], "]"}], ",", "1"}], "}"}], ",", 
-             RowBox[{"Appearance", "\[Rule]", "\"\<Labeled\>\""}]}], "]"}]}], 
-          "\[IndentingNewLine]", "}"}], "]"}]}]}]}]}], "\[IndentingNewLine]", 
-    "]"}]}], ";"}], "\[IndentingNewLine]", 
+   RowBox[{"listOfVars", "/.", 
+    RowBox[{"a_String", "\[Rule]", 
+     RowBox[{"Row", "[", 
+      RowBox[{"{", 
+       RowBox[{"a", ",", 
+        RowBox[{"Slider", "[", 
+         RowBox[{
+          RowBox[{"Dynamic", "[", 
+           SubscriptBox["bet", "a"], "]"}], ",", 
+          RowBox[{"{", 
+           RowBox[{"1", ",", 
+            RowBox[{"Dynamic", "[", 
+             RowBox[{
+              SubscriptBox["bet", "a"], "+", 
+              RowBox[{"toBet", "[", "]"}]}], "]"}], ",", "1"}], "}"}]}], 
+         "]"}], ",", 
+        RowBox[{"Dynamic", "[", 
+         RowBox[{
+          SubscriptBox["bet", "a"], "-", "1"}], "]"}]}], 
+       "\[IndentingNewLine]", "}"}], "]"}]}]}]}], 
+  ";"}], "\[IndentingNewLine]", 
  RowBox[{
   RowBox[{
    RowBox[{"runWithBets", "[", "]"}], ":=", 
@@ -379,7 +378,16 @@ Cell[BoxData[{
   ";"}], "\[IndentingNewLine]", 
  RowBox[{
   RowBox[{
-   RowBox[{"examinateBets", "[", 
+   RowBox[{"examinateBets", "[", "number_", "]"}], ":=", 
+   RowBox[{"Module", "[", 
+    RowBox[{
+     RowBox[{"{", "sum", "}"}], ",", "\[IndentingNewLine]", 
+     RowBox[{"sum", " ", "=", " ", 
+      RowBox[{"examinateBetsColors", "[", "number", "]"}]}]}], 
+    "\[IndentingNewLine]", "]"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"examinateBetsColors", "[", 
     RowBox[{"number_", "?", 
      RowBox[{"(", 
       RowBox[{
@@ -389,11 +397,13 @@ Cell[BoxData[{
           RowBox[{"redNumbers", "[", "]"}], ",", "#"}], "]"}], ">", "0"}], 
        "&"}], ")"}]}], "]"}], ":=", 
    RowBox[{
-    SubscriptBox["bet", "\"\<Red\>\""], "*", "2"}]}], 
+    RowBox[{"(", 
+     RowBox[{
+      SubscriptBox["bet", "\"\<Red\>\""], "-", "1"}], ")"}], "*", "2"}]}], 
   ";"}], "\[IndentingNewLine]", 
  RowBox[{
   RowBox[{
-   RowBox[{"examinateBets", "[", 
+   RowBox[{"examinateBetsColors", "[", 
     RowBox[{"number_", "?", 
      RowBox[{"(", 
       RowBox[{
@@ -403,7 +413,13 @@ Cell[BoxData[{
           RowBox[{"blackNumbers", "[", "]"}], ",", "#"}], "]"}], ">", "0"}], 
        "&"}], ")"}]}], "]"}], ":=", 
    RowBox[{
-    SubscriptBox["bet", "\"\<Black\>\""], "*", "2"}]}], 
+    RowBox[{"(", 
+     RowBox[{
+      SubscriptBox["bet", "\"\<Black\>\""], "-", "1"}], ")"}], "*", "2"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"examinateBetsColors", "[", "number_", "]"}], ":=", "0"}], 
   ";"}], "\[IndentingNewLine]", 
  RowBox[{
   RowBox[{
@@ -411,9 +427,10 @@ Cell[BoxData[{
    RowBox[{"Total", "[", 
     RowBox[{"Table", "[", 
      RowBox[{
-      SubscriptBox["bet", 
-       RowBox[{"listOfVars", "[", 
-        RowBox[{"[", "ite", "]"}], "]"}]], ",", 
+      RowBox[{
+       SubscriptBox["bet", 
+        RowBox[{"listOfVars", "[", 
+         RowBox[{"[", "ite", "]"}], "]"}]], "-", "1"}], ",", 
       RowBox[{"{", 
        RowBox[{"ite", ",", "1", ",", 
         RowBox[{"Length", "[", "listOfVars", "]"}]}], "}"}]}], "]"}], "]"}]}],
@@ -498,7 +515,17 @@ Cell[BoxData[{
    3.595411036316434*^9, 3.595411038109147*^9}, {3.595411166944813*^9, 
    3.5954111782703943`*^9}, {3.5954112467525063`*^9, 3.595411247554728*^9}, {
    3.595411520021366*^9, 3.59541152491556*^9}, {3.5954115649962187`*^9, 
-   3.595411627135295*^9}, {3.595411842560932*^9, 3.5954118443087997`*^9}}],
+   3.595411627135295*^9}, {3.595411842560932*^9, 3.5954118443087997`*^9}, {
+   3.595742379936541*^9, 3.595742425339356*^9}, {3.59574268731256*^9, 
+   3.595742687415535*^9}, {3.595742722708077*^9, 3.595742722804739*^9}, {
+   3.595742770452737*^9, 3.595742882228505*^9}, {3.595742923347561*^9, 
+   3.5957429946168737`*^9}, {3.5957431545024557`*^9, 3.59574322216259*^9}, {
+   3.5957433287455893`*^9, 3.595743375317163*^9}, {3.595743425676547*^9, 
+   3.595743528814376*^9}, 3.595743574039197*^9, {3.595743662295342*^9, 
+   3.595743730988749*^9}, {3.595743780898095*^9, 3.5957438169751587`*^9}, 
+   3.595743881669442*^9, {3.5957439276931353`*^9, 3.5957439967881813`*^9}}],
+
+Cell[CellGroupData[{
 
 Cell[BoxData[{
  RowBox[{"Row", "[", 
@@ -514,8 +541,10 @@ Cell[BoxData[{
   "]"}], "\[IndentingNewLine]", 
  RowBox[{"Dynamic", "[", 
   RowBox[{"roullette", "[", "i", "]"}], "]"}], "\[IndentingNewLine]", 
- RowBox[{"sliders", "=", 
-  RowBox[{"prepareSliders", "[", "]"}]}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"sliders", "=", 
+   RowBox[{"prepareSliders", "[", "]"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{"Column", "[", "sliders", "]"}], "\[IndentingNewLine]", 
  RowBox[{"Button", "[", 
   RowBox[{"\"\<Start\>\"", ",", 
    RowBox[{"runWithBets", "[", "]"}], ",", 
@@ -531,7 +560,69 @@ Cell[BoxData[{
   3.595408819552981*^9}, {3.595408859032647*^9, 3.595408931641345*^9}, {
   3.595409287958753*^9, 3.5954093095042458`*^9}, {3.595409393610529*^9, 
   3.595409487827607*^9}, {3.595409561228611*^9, 3.595409563483329*^9}, {
-  3.5954097030785027`*^9, 3.59540970543027*^9}}]
+  3.5954097030785027`*^9, 3.59540970543027*^9}, {3.5957426468222237`*^9, 
+  3.595742655380826*^9}}],
+
+Cell[BoxData[
+ TemplateBox[{TagBox[
+    DynamicModuleBox[{Typeset`i$$ = "Score: "}, 
+     InputFieldBox[
+      Dynamic[Typeset`i$$], String, Enabled -> False], 
+     DynamicModuleValues :> {}], InputField[
+     Setting[#], String, Enabled -> False]& ],InputFieldBox[
+    Dynamic[$CellContext`score], Enabled -> False]},
+  "RowDefault"]], "Output",
+ CellChangeTimes->{{3.595743559377873*^9, 3.5957435782643623`*^9}, 
+   3.595743611577855*^9, 3.595743705972456*^9, 3.595743742960092*^9, {
+   3.5957438024709873`*^9, 3.595743849487358*^9}, 3.595743906511031*^9}],
+
+Cell[BoxData[
+ DynamicBox[ToBoxes[
+   $CellContext`roullette[$CellContext`i], StandardForm],
+  ImageSizeCache->{360., {178., 182.}}]], "Output",
+ CellChangeTimes->{{3.595743559377873*^9, 3.5957435782643623`*^9}, 
+   3.595743611577855*^9, 3.595743705972456*^9, 3.595743742960092*^9, {
+   3.5957438024709873`*^9, 3.595743849487358*^9}, 3.595743906514332*^9}],
+
+Cell[BoxData[
+ TagBox[GridBox[{
+    {
+     TemplateBox[{"\"Black\"",SliderBox[
+        Dynamic[
+         Subscript[$CellContext`bet, "Black"]], {1, 
+         Dynamic[Subscript[$CellContext`bet, "Black"] + $CellContext`toBet[]],
+          1}],DynamicBox[
+        ToBoxes[Subscript[$CellContext`bet, "Black"] - 1, StandardForm], 
+        ImageSizeCache -> {23., {1., 9.}}]},
+      "RowDefault"]},
+    {
+     TemplateBox[{"\"Red\"",SliderBox[
+        Dynamic[
+         Subscript[$CellContext`bet, "Red"]], {1, 
+         Dynamic[Subscript[$CellContext`bet, "Red"] + $CellContext`toBet[]], 
+         1}],DynamicBox[
+        ToBoxes[Subscript[$CellContext`bet, "Red"] - 1, StandardForm], 
+        ImageSizeCache -> {16., {1., 9.}}]},
+      "RowDefault"]}
+   },
+   DefaultBaseStyle->"Column",
+   GridBoxAlignment->{"Columns" -> {{Left}}},
+   GridBoxItemSize->{"Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}],
+  "Column"]], "Output",
+ CellChangeTimes->{{3.595743559377873*^9, 3.5957435782643623`*^9}, 
+   3.595743611577855*^9, 3.595743705972456*^9, 3.595743742960092*^9, {
+   3.5957438024709873`*^9, 3.595743849487358*^9}, 3.5957439066482363`*^9}],
+
+Cell[BoxData[
+ ButtonBox["\<\"Start\"\>",
+  Appearance->Automatic,
+  ButtonFunction:>$CellContext`runWithBets[],
+  Evaluator->Automatic,
+  Method->"Queued"]], "Output",
+ CellChangeTimes->{{3.595743559377873*^9, 3.5957435782643623`*^9}, 
+   3.595743611577855*^9, 3.595743705972456*^9, 3.595743742960092*^9, {
+   3.5957438024709873`*^9, 3.595743849487358*^9}, 3.59574390665396*^9}]
+}, Open  ]]
 },
 WindowSize->{740, 860},
 WindowMargins->{{Automatic, 185}, {Automatic, 4}},
@@ -551,8 +642,14 @@ CellTagsIndex->{}
 *)
 (*NotebookFileOutline
 Notebook[{
-Cell[557, 20, 19672, 480, 1228, "Input"],
-Cell[20232, 502, 1611, 31, 97, "Input"]
+Cell[557, 20, 20720, 505, 1245, "Input"],
+Cell[CellGroupData[{
+Cell[21302, 529, 1747, 34, 114, "Input"],
+Cell[23052, 565, 559, 11, 39, "Output"],
+Cell[23614, 578, 356, 6, 375, "Output"],
+Cell[23973, 586, 1145, 27, 69, "Output"],
+Cell[25121, 615, 379, 8, 43, "Output"]
+}, Open  ]]
 }
 ]
 *)
