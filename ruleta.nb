@@ -10,14 +10,23 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       157,          7]
-NotebookDataLength[     26737,        672]
-NotebookOptionsPosition[     26388,        655]
-NotebookOutlinePosition[     26766,        672]
-CellTagsIndexPosition[     26723,        669]
+NotebookDataLength[     27103,        685]
+NotebookOptionsPosition[     26684,        665]
+NotebookOutlinePosition[     27062,        682]
+CellTagsIndexPosition[     27019,        679]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
 Notebook[{
+
+Cell[CellGroupData[{
+Cell[TextData[{
+ "Ruleta\n",
+ StyleBox["BI-PMA semestr\[AAcute]ln\[IAcute] pr\[AAcute]ce\n", "Subtitle"],
+ StyleBox["Jakub Olejn\[IAcute]k <olejnjak@fit.cvut.cz>", "Subsubtitle"]
+}], "Title",
+ CellChangeTimes->{{3.596050777494935*^9, 3.5960508358283854`*^9}}],
+
 Cell[BoxData[{
  RowBox[{
   RowBox[{"ClearAll", "[", 
@@ -652,6 +661,7 @@ Cell[BoxData[{
   3.595409487827607*^9}, {3.595409561228611*^9, 3.595409563483329*^9}, {
   3.5954097030785027`*^9, 3.59540970543027*^9}, {3.5957426468222237`*^9, 
   3.595742655380826*^9}}]
+}, Open  ]]
 },
 WindowSize->{740, 860},
 WindowMargins->{{Automatic, 185}, {Automatic, 4}},
@@ -671,9 +681,12 @@ CellTagsIndex->{}
 *)
 (*NotebookFileOutline
 Notebook[{
-Cell[557, 20, 24077, 597, 1503, "Input",
+Cell[CellGroupData[{
+Cell[579, 22, 259, 5, 148, "Title"],
+Cell[841, 29, 24077, 597, 1520, "Input",
  InitializationCell->True],
-Cell[24637, 619, 1747, 34, 114, "Input"]
+Cell[24921, 628, 1747, 34, 114, "Input"]
+}, Open  ]]
 }
 ]
 *)
