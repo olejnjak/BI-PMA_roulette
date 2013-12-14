@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       157,          7]
-NotebookDataLength[     26410,        667]
-NotebookOptionsPosition[     26061,        650]
-NotebookOutlinePosition[     26439,        667]
-CellTagsIndexPosition[     26396,        664]
+NotebookDataLength[     26737,        672]
+NotebookOptionsPosition[     26388,        655]
+NotebookOutlinePosition[     26766,        672]
+CellTagsIndexPosition[     26723,        669]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -22,9 +22,14 @@ Cell[BoxData[{
  RowBox[{
   RowBox[{"ClearAll", "[", 
    RowBox[{
-   "diskForPoint", ",", "preparePoints", ",", "roullette", ",", "bet", ",", 
-    "start", ",", "examinateBets", ",", "examinateBetsColors", ",", 
-    "examinateBetsOddEven"}], "]"}], ";"}], "\[IndentingNewLine]", 
+   "diskForPoint", ",", "preparePoints", ",", "roullette", ",", 
+    "examinateBets", ",", "examinateBetsColors", ",", "examinateBetsOddEven", 
+    ",", "prepareSliders", ",", "run", ",", "runWithBets", ",", 
+    "examinateBets", ",", "examinateBetsColors", ",", "examinateBetsNumber", 
+    ",", "examinateBetsNumberSize", ",", "examinateBetsOddEven", ",", 
+    "sumOfBets", ",", "redNumbers", ",", "blackNumbers", ",", "prepareField", 
+    ",", "prepareStyle", ",", "toBet"}], "]"}], 
+  ";"}], "\[IndentingNewLine]", 
  RowBox[{
   RowBox[{"values", "=", 
    RowBox[{"RandomSample", "[", 
@@ -610,7 +615,7 @@ Cell[BoxData[{
    3.596048550873929*^9}, {3.59604863983313*^9, 3.596048664130333*^9}, {
    3.5960487923267517`*^9, 3.59604879447056*^9}, {3.596048930770535*^9, 
    3.596049023927949*^9}, {3.5960490578580112`*^9, 3.596049067905518*^9}, {
-   3.5960500071630983`*^9, 3.596050112800026*^9}}],
+   3.5960500071630983`*^9, 3.596050112800026*^9}, 3.596050620088726*^9}],
 
 Cell[BoxData[{
  RowBox[{"Row", "[", 
@@ -666,9 +671,9 @@ CellTagsIndex->{}
 *)
 (*NotebookFileOutline
 Notebook[{
-Cell[557, 20, 23750, 592, 1452, "Input",
+Cell[557, 20, 24077, 597, 1503, "Input",
  InitializationCell->True],
-Cell[24310, 614, 1747, 34, 114, "Input"]
+Cell[24637, 619, 1747, 34, 114, "Input"]
 }
 ]
 *)
