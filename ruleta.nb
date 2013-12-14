@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       157,          7]
-NotebookDataLength[     29434,        750]
-NotebookOptionsPosition[     28888,        727]
-NotebookOutlinePosition[     29266,        744]
-CellTagsIndexPosition[     29223,        741]
+NotebookDataLength[     26410,        667]
+NotebookOptionsPosition[     26061,        650]
+NotebookOutlinePosition[     26439,        667]
+CellTagsIndexPosition[     26396,        664]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -42,7 +42,8 @@ Cell[BoxData[{
    RowBox[{"{", 
     RowBox[{
     "\"\<Black\>\"", ",", "\"\<Red\>\"", ",", "\"\<Odd\>\"", ",", 
-     "\"\<Even\>\"", ",", "\"\<1-18\>\"", ",", "\"\<19-36\>\""}], "}"}]}], 
+     "\"\<Even\>\"", ",", "\"\<1-18\>\"", ",", "\"\<19-36\>\"", ",", 
+     "\"\<0\>\"", ",", "\"\<00\>\""}], "}"}]}], 
   ";"}], "\[IndentingNewLine]", 
  RowBox[{
   RowBox[{"score", "=", "100"}], ";"}], "\[IndentingNewLine]", 
@@ -372,8 +373,7 @@ Cell[BoxData[{
       RowBox[{"score", "=", 
        RowBox[{"score", "-", 
         RowBox[{"sumOfBets", "[", "]"}]}]}], ";", "\[IndentingNewLine]", 
-      RowBox[{"number", "=", 
-       RowBox[{"run", "[", "]"}]}], ";", "\[IndentingNewLine]", 
+      RowBox[{"number", "=", "0"}], ";", "\[IndentingNewLine]", 
       RowBox[{"s", "=", 
        RowBox[{"examinateBets", "[", "number", "]"}]}], ";", 
       "\[IndentingNewLine]", 
@@ -395,7 +395,11 @@ Cell[BoxData[{
       "\[IndentingNewLine]", 
       RowBox[{"sum", "=", 
        RowBox[{"sum", "+", 
-        RowBox[{"examinateBetsNumberSize", "[", "number", "]"}]}]}]}]}], 
+        RowBox[{"examinateBetsNumberSize", "[", "number", "]"}]}]}], ";", 
+      "\[IndentingNewLine]", 
+      RowBox[{"sum", "=", 
+       RowBox[{"sum", "+", 
+        RowBox[{"examinateBetsNumber", "[", "number", "]"}]}]}]}]}], 
     "\[IndentingNewLine]", "]"}]}], ";"}], "\[IndentingNewLine]", 
  RowBox[{
   RowBox[{
@@ -489,6 +493,15 @@ Cell[BoxData[{
   RowBox[{
    RowBox[{"examinateBetsNumberSize", "[", "number_", "]"}], ":=", "0"}], 
   ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"examinateBetsNumber", "[", "number_", "]"}], ":=", 
+   RowBox[{
+    RowBox[{"(", 
+     RowBox[{
+      SubscriptBox["bet", 
+       RowBox[{"ToString", "[", "number", "]"}]], "-", "1"}], ")"}], "*", 
+    "35"}]}], ";"}], "\[IndentingNewLine]", 
  RowBox[{
   RowBox[{
    RowBox[{"sumOfBets", "[", "]"}], ":=", 
@@ -596,9 +609,8 @@ Cell[BoxData[{
    3.596048295434966*^9, 3.5960483592287807`*^9}, {3.5960484890222054`*^9, 
    3.596048550873929*^9}, {3.59604863983313*^9, 3.596048664130333*^9}, {
    3.5960487923267517`*^9, 3.59604879447056*^9}, {3.596048930770535*^9, 
-   3.596049023927949*^9}, {3.5960490578580112`*^9, 3.596049067905518*^9}}],
-
-Cell[CellGroupData[{
+   3.596049023927949*^9}, {3.5960490578580112`*^9, 3.596049067905518*^9}, {
+   3.5960500071630983`*^9, 3.596050112800026*^9}}],
 
 Cell[BoxData[{
  RowBox[{"Row", "[", 
@@ -634,96 +646,7 @@ Cell[BoxData[{
   3.595409287958753*^9, 3.5954093095042458`*^9}, {3.595409393610529*^9, 
   3.595409487827607*^9}, {3.595409561228611*^9, 3.595409563483329*^9}, {
   3.5954097030785027`*^9, 3.59540970543027*^9}, {3.5957426468222237`*^9, 
-  3.595742655380826*^9}}],
-
-Cell[BoxData[
- TemplateBox[{TagBox[
-    DynamicModuleBox[{Typeset`i$$ = "Score: "}, 
-     InputFieldBox[
-      Dynamic[Typeset`i$$], String, Enabled -> False], 
-     DynamicModuleValues :> {}], InputField[
-     Setting[#], String, Enabled -> False]& ],InputFieldBox[
-    Dynamic[$CellContext`score], Enabled -> False]},
-  "RowDefault"]], "Output",
- CellChangeTimes->{3.596048915608533*^9, 3.596048948008328*^9}],
-
-Cell[BoxData[
- DynamicBox[ToBoxes[
-   $CellContext`roullette[$CellContext`i], StandardForm],
-  ImageSizeCache->{360., {178., 182.}}]], "Output",
- CellChangeTimes->{3.596048915608533*^9, 3.5960489480131702`*^9}],
-
-Cell[BoxData[
- TagBox[GridBox[{
-    {
-     TemplateBox[{"\"Black\"",SliderBox[
-        Dynamic[
-         Subscript[$CellContext`bet, "Black"]], {1, 
-         Dynamic[Subscript[$CellContext`bet, "Black"] + $CellContext`toBet[]],
-          1}],DynamicBox[
-        ToBoxes[Subscript[$CellContext`bet, "Black"] - 1, StandardForm], 
-        ImageSizeCache -> {8., {1., 9.}}]},
-      "RowDefault"]},
-    {
-     TemplateBox[{"\"Red\"",SliderBox[
-        Dynamic[
-         Subscript[$CellContext`bet, "Red"]], {1, 
-         Dynamic[Subscript[$CellContext`bet, "Red"] + $CellContext`toBet[]], 
-         1}],DynamicBox[
-        ToBoxes[Subscript[$CellContext`bet, "Red"] - 1, StandardForm], 
-        ImageSizeCache -> {8., {1., 9.}}]},
-      "RowDefault"]},
-    {
-     TemplateBox[{"\"Odd\"",SliderBox[
-        Dynamic[
-         Subscript[$CellContext`bet, "Odd"]], {1, 
-         Dynamic[Subscript[$CellContext`bet, "Odd"] + $CellContext`toBet[]], 
-         1}],DynamicBox[
-        ToBoxes[Subscript[$CellContext`bet, "Odd"] - 1, StandardForm], 
-        ImageSizeCache -> {8., {1., 9.}}]},
-      "RowDefault"]},
-    {
-     TemplateBox[{"\"Even\"",SliderBox[
-        Dynamic[
-         Subscript[$CellContext`bet, "Even"]], {1, 
-         Dynamic[Subscript[$CellContext`bet, "Even"] + $CellContext`toBet[]], 
-         1}],DynamicBox[
-        ToBoxes[Subscript[$CellContext`bet, "Even"] - 1, StandardForm], 
-        ImageSizeCache -> {8., {1., 9.}}]},
-      "RowDefault"]},
-    {
-     TemplateBox[{"\"1-18\"",SliderBox[
-        Dynamic[
-         Subscript[$CellContext`bet, "1-18"]], {1, 
-         Dynamic[Subscript[$CellContext`bet, "1-18"] + $CellContext`toBet[]], 
-         1}],DynamicBox[
-        ToBoxes[Subscript[$CellContext`bet, "1-18"] - 1, StandardForm], 
-        ImageSizeCache -> {16., {1., 9.}}]},
-      "RowDefault"]},
-    {
-     TemplateBox[{"\"19-36\"",SliderBox[
-        Dynamic[
-         Subscript[$CellContext`bet, "19-36"]], {1, 
-         Dynamic[Subscript[$CellContext`bet, "19-36"] + $CellContext`toBet[]],
-          1}],DynamicBox[
-        ToBoxes[Subscript[$CellContext`bet, "19-36"] - 1, StandardForm], 
-        ImageSizeCache -> {8., {1., 9.}}]},
-      "RowDefault"]}
-   },
-   DefaultBaseStyle->"Column",
-   GridBoxAlignment->{"Columns" -> {{Left}}},
-   GridBoxItemSize->{"Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}],
-  "Column"]], "Output",
- CellChangeTimes->{3.596048915608533*^9, 3.59604894814559*^9}],
-
-Cell[BoxData[
- ButtonBox["\<\"Start\"\>",
-  Appearance->Automatic,
-  ButtonFunction:>$CellContext`runWithBets[],
-  Evaluator->Automatic,
-  Method->"Queued"]], "Output",
- CellChangeTimes->{3.596048915608533*^9, 3.596048948158317*^9}]
-}, Open  ]]
+  3.595742655380826*^9}}]
 },
 WindowSize->{740, 860},
 WindowMargins->{{Automatic, 185}, {Automatic, 4}},
@@ -743,15 +666,9 @@ CellTagsIndex->{}
 *)
 (*NotebookFileOutline
 Notebook[{
-Cell[557, 20, 23253, 578, 1415, "Input",
+Cell[557, 20, 23750, 592, 1452, "Input",
  InitializationCell->True],
-Cell[CellGroupData[{
-Cell[23835, 602, 1747, 34, 114, "Input"],
-Cell[25585, 638, 411, 9, 39, "Output"],
-Cell[25999, 649, 210, 4, 375, "Output"],
-Cell[26212, 655, 2425, 61, 181, "Output"],
-Cell[28640, 718, 232, 6, 43, "Output"]
-}, Open  ]]
+Cell[24310, 614, 1747, 34, 114, "Input"]
 }
 ]
 *)
