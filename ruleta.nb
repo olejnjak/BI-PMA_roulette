@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       157,          7]
-NotebookDataLength[     23407,        581]
-NotebookOptionsPosition[     23058,        564]
-NotebookOutlinePosition[     23436,        581]
-CellTagsIndexPosition[     23393,        578]
+NotebookDataLength[     24710,        617]
+NotebookOptionsPosition[     24361,        600]
+NotebookOutlinePosition[     24739,        617]
+CellTagsIndexPosition[     24696,        614]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -23,7 +23,8 @@ Cell[BoxData[{
   RowBox[{"ClearAll", "[", 
    RowBox[{
    "diskForPoint", ",", "preparePoints", ",", "roullette", ",", "bet", ",", 
-    "start"}], "]"}], ";"}], "\[IndentingNewLine]", 
+    "start", ",", "examinateBets", ",", "examinateBetsColors", ",", 
+    "examinateBetsOddEven"}], "]"}], ";"}], "\[IndentingNewLine]", 
  RowBox[{
   RowBox[{"values", "=", 
    RowBox[{"RandomSample", "[", 
@@ -39,8 +40,9 @@ Cell[BoxData[{
  RowBox[{
   RowBox[{"listOfVars", "=", 
    RowBox[{"{", 
-    RowBox[{"\"\<Black\>\"", ",", "\"\<Red\>\""}], "}"}]}], 
-  ";"}], "\[IndentingNewLine]", 
+    RowBox[{
+    "\"\<Black\>\"", ",", "\"\<Red\>\"", ",", "\"\<Odd\>\"", ",", 
+     "\"\<Even\>\""}], "}"}]}], ";"}], "\[IndentingNewLine]", 
  RowBox[{
   RowBox[{"score", "=", "100"}], ";"}], "\[IndentingNewLine]", 
  RowBox[{
@@ -382,8 +384,13 @@ Cell[BoxData[{
    RowBox[{"Module", "[", 
     RowBox[{
      RowBox[{"{", "sum", "}"}], ",", "\[IndentingNewLine]", 
-     RowBox[{"sum", " ", "=", " ", 
-      RowBox[{"examinateBetsColors", "[", "number", "]"}]}]}], 
+     RowBox[{
+      RowBox[{"sum", " ", "=", " ", 
+       RowBox[{"examinateBetsColors", "[", "number", "]"}]}], ";", 
+      "\[IndentingNewLine]", 
+      RowBox[{"sum", " ", "=", " ", 
+       RowBox[{"sum", "+", 
+        RowBox[{"examinateBetsOddEven", "[", "number", "]"}]}]}]}]}], 
     "\[IndentingNewLine]", "]"}]}], ";"}], "\[IndentingNewLine]", 
  RowBox[{
   RowBox[{
@@ -420,6 +427,32 @@ Cell[BoxData[{
  RowBox[{
   RowBox[{
    RowBox[{"examinateBetsColors", "[", "number_", "]"}], ":=", "0"}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"examinateBetsOddEven", "[", 
+    RowBox[{"number_", "?", "EvenQ"}], "]"}], ":=", 
+   RowBox[{
+    RowBox[{"(", 
+     RowBox[{
+      SubscriptBox["bet", "\"\<Even\>\""], "-", "1"}], ")"}], "*", "2"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"examinateBetsOddEven", "[", 
+    RowBox[{"number_", "?", "OddQ"}], "]"}], ":=", 
+   RowBox[{
+    RowBox[{"(", 
+     RowBox[{
+      SubscriptBox["bet", "\"\<Odd\>\""], "-", "1"}], ")"}], "*", "2"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"examinateBetsOddEven", "[", "0", "]"}], ":=", "0"}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"examinateBetsOddEven", "[", "\"\<00\>\"", "]"}], ":=", "0"}], 
   ";"}], "\[IndentingNewLine]", 
  RowBox[{
   RowBox[{
@@ -524,7 +557,10 @@ Cell[BoxData[{
    3.5957433287455893`*^9, 3.595743375317163*^9}, {3.595743425676547*^9, 
    3.595743528814376*^9}, 3.595743574039197*^9, {3.595743662295342*^9, 
    3.595743730988749*^9}, {3.595743780898095*^9, 3.5957438169751587`*^9}, 
-   3.595743881669442*^9, {3.5957439276931353`*^9, 3.5957439967881813`*^9}}],
+   3.595743881669442*^9, {3.5957439276931353`*^9, 3.5957439967881813`*^9}, {
+   3.596048295434966*^9, 3.5960483592287807`*^9}, {3.5960484890222054`*^9, 
+   3.596048550873929*^9}, {3.59604863983313*^9, 3.596048664130333*^9}, {
+   3.5960487923267517`*^9, 3.59604879447056*^9}}],
 
 Cell[BoxData[{
  RowBox[{"Row", "[", 
@@ -580,9 +616,9 @@ CellTagsIndex->{}
 *)
 (*NotebookFileOutline
 Notebook[{
-Cell[557, 20, 20747, 506, 1245, "Input",
+Cell[557, 20, 22050, 542, 1347, "Input",
  InitializationCell->True],
-Cell[21307, 528, 1747, 34, 114, "Input"]
+Cell[22610, 564, 1747, 34, 114, "Input"]
 }
 ]
 *)
