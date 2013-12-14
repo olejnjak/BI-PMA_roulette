@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       157,          7]
-NotebookDataLength[     26035,        648]
-NotebookOptionsPosition[     25516,        626]
-NotebookOutlinePosition[     25894,        643]
-CellTagsIndexPosition[     25851,        640]
+NotebookDataLength[     23407,        581]
+NotebookOptionsPosition[     23058,        564]
+NotebookOutlinePosition[     23436,        581]
+CellTagsIndexPosition[     23393,        578]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -435,6 +435,7 @@ Cell[BoxData[{
        RowBox[{"ite", ",", "1", ",", 
         RowBox[{"Length", "[", "listOfVars", "]"}]}], "}"}]}], "]"}], "]"}]}],
    ";"}]}], "Input",
+ InitializationCell->True,
  CellChangeTimes->{{3.594396742369816*^9, 3.594396767047278*^9}, {
    3.5943968079693832`*^9, 3.5943968898499537`*^9}, {3.594405577252213*^9, 
    3.5944056735309067`*^9}, {3.5944061723066072`*^9, 3.594406178058609*^9}, 
@@ -525,8 +526,6 @@ Cell[BoxData[{
    3.595743730988749*^9}, {3.595743780898095*^9, 3.5957438169751587`*^9}, 
    3.595743881669442*^9, {3.5957439276931353`*^9, 3.5957439967881813`*^9}}],
 
-Cell[CellGroupData[{
-
 Cell[BoxData[{
  RowBox[{"Row", "[", 
   RowBox[{"{", 
@@ -561,68 +560,7 @@ Cell[BoxData[{
   3.595409287958753*^9, 3.5954093095042458`*^9}, {3.595409393610529*^9, 
   3.595409487827607*^9}, {3.595409561228611*^9, 3.595409563483329*^9}, {
   3.5954097030785027`*^9, 3.59540970543027*^9}, {3.5957426468222237`*^9, 
-  3.595742655380826*^9}}],
-
-Cell[BoxData[
- TemplateBox[{TagBox[
-    DynamicModuleBox[{Typeset`i$$ = "Score: "}, 
-     InputFieldBox[
-      Dynamic[Typeset`i$$], String, Enabled -> False], 
-     DynamicModuleValues :> {}], InputField[
-     Setting[#], String, Enabled -> False]& ],InputFieldBox[
-    Dynamic[$CellContext`score], Enabled -> False]},
-  "RowDefault"]], "Output",
- CellChangeTimes->{{3.595743559377873*^9, 3.5957435782643623`*^9}, 
-   3.595743611577855*^9, 3.595743705972456*^9, 3.595743742960092*^9, {
-   3.5957438024709873`*^9, 3.595743849487358*^9}, 3.595743906511031*^9}],
-
-Cell[BoxData[
- DynamicBox[ToBoxes[
-   $CellContext`roullette[$CellContext`i], StandardForm],
-  ImageSizeCache->{360., {178., 182.}}]], "Output",
- CellChangeTimes->{{3.595743559377873*^9, 3.5957435782643623`*^9}, 
-   3.595743611577855*^9, 3.595743705972456*^9, 3.595743742960092*^9, {
-   3.5957438024709873`*^9, 3.595743849487358*^9}, 3.595743906514332*^9}],
-
-Cell[BoxData[
- TagBox[GridBox[{
-    {
-     TemplateBox[{"\"Black\"",SliderBox[
-        Dynamic[
-         Subscript[$CellContext`bet, "Black"]], {1, 
-         Dynamic[Subscript[$CellContext`bet, "Black"] + $CellContext`toBet[]],
-          1}],DynamicBox[
-        ToBoxes[Subscript[$CellContext`bet, "Black"] - 1, StandardForm], 
-        ImageSizeCache -> {23., {1., 9.}}]},
-      "RowDefault"]},
-    {
-     TemplateBox[{"\"Red\"",SliderBox[
-        Dynamic[
-         Subscript[$CellContext`bet, "Red"]], {1, 
-         Dynamic[Subscript[$CellContext`bet, "Red"] + $CellContext`toBet[]], 
-         1}],DynamicBox[
-        ToBoxes[Subscript[$CellContext`bet, "Red"] - 1, StandardForm], 
-        ImageSizeCache -> {16., {1., 9.}}]},
-      "RowDefault"]}
-   },
-   DefaultBaseStyle->"Column",
-   GridBoxAlignment->{"Columns" -> {{Left}}},
-   GridBoxItemSize->{"Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}],
-  "Column"]], "Output",
- CellChangeTimes->{{3.595743559377873*^9, 3.5957435782643623`*^9}, 
-   3.595743611577855*^9, 3.595743705972456*^9, 3.595743742960092*^9, {
-   3.5957438024709873`*^9, 3.595743849487358*^9}, 3.5957439066482363`*^9}],
-
-Cell[BoxData[
- ButtonBox["\<\"Start\"\>",
-  Appearance->Automatic,
-  ButtonFunction:>$CellContext`runWithBets[],
-  Evaluator->Automatic,
-  Method->"Queued"]], "Output",
- CellChangeTimes->{{3.595743559377873*^9, 3.5957435782643623`*^9}, 
-   3.595743611577855*^9, 3.595743705972456*^9, 3.595743742960092*^9, {
-   3.5957438024709873`*^9, 3.595743849487358*^9}, 3.59574390665396*^9}]
-}, Open  ]]
+  3.595742655380826*^9}}]
 },
 WindowSize->{740, 860},
 WindowMargins->{{Automatic, 185}, {Automatic, 4}},
@@ -642,14 +580,9 @@ CellTagsIndex->{}
 *)
 (*NotebookFileOutline
 Notebook[{
-Cell[557, 20, 20720, 505, 1245, "Input"],
-Cell[CellGroupData[{
-Cell[21302, 529, 1747, 34, 114, "Input"],
-Cell[23052, 565, 559, 11, 39, "Output"],
-Cell[23614, 578, 356, 6, 375, "Output"],
-Cell[23973, 586, 1145, 27, 69, "Output"],
-Cell[25121, 615, 379, 8, 43, "Output"]
-}, Open  ]]
+Cell[557, 20, 20747, 506, 1245, "Input",
+ InitializationCell->True],
+Cell[21307, 528, 1747, 34, 114, "Input"]
 }
 ]
 *)
