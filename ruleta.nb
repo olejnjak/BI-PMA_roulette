@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       157,          7]
-NotebookDataLength[     27541,        698]
-NotebookOptionsPosition[     27122,        678]
-NotebookOutlinePosition[     27500,        695]
-CellTagsIndexPosition[     27457,        692]
+NotebookDataLength[     27074,        694]
+NotebookOptionsPosition[     26655,        674]
+NotebookOutlinePosition[     27033,        691]
+CellTagsIndexPosition[     26990,        688]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -655,25 +655,21 @@ Cell[BoxData[{
   RowBox[{"roullette", "[", "i", "]"}], "]"}], "\[IndentingNewLine]", 
  RowBox[{
   RowBox[{"sliders", "=", 
-   RowBox[{"prepareSliders", "[", "]"}]}], ";"}], "\[IndentingNewLine]", 
+   RowBox[{"prepareSliders", "[", "]"}]}], 
+  ";"}], "\[IndentingNewLine]", "\"\<Bets:\>\"", "\[IndentingNewLine]", 
  RowBox[{"Column", "[", "sliders", "]"}], "\[IndentingNewLine]", 
  RowBox[{"Button", "[", 
   RowBox[{"\"\<Start\>\"", ",", 
    RowBox[{"runWithBets", "[", "]"}], ",", 
    RowBox[{"Method", "\[Rule]", "\"\<Queued\>\""}]}], "]"}]}], "Input",
- CellChangeTimes->{{3.5951632098584127`*^9, 3.595163212788898*^9}, {
-  3.595166585936372*^9, 3.595166600934824*^9}, {3.595251981990573*^9, 
-  3.595251985464897*^9}, {3.595252179404196*^9, 3.595252185926445*^9}, {
-  3.595253197179122*^9, 3.595253225258404*^9}, {3.595253349351432*^9, 
-  3.595253371490994*^9}, {3.59525342725239*^9, 3.595253433880705*^9}, {
-  3.595253480527316*^9, 3.595253482741138*^9}, {3.595253711389826*^9, 
-  3.5952537166057167`*^9}, {3.595407918523102*^9, 3.59540792612366*^9}, {
-  3.595408148398222*^9, 3.595408156406453*^9}, {3.595408706143837*^9, 
-  3.595408819552981*^9}, {3.595408859032647*^9, 3.595408931641345*^9}, {
-  3.595409287958753*^9, 3.5954093095042458`*^9}, {3.595409393610529*^9, 
-  3.595409487827607*^9}, {3.595409561228611*^9, 3.595409563483329*^9}, {
-  3.5954097030785027`*^9, 3.59540970543027*^9}, {3.5957426468222237`*^9, 
-  3.595742655380826*^9}}]
+ CellChangeTimes->CompressedData["
+1:eJxTTMoPSmViYGAQBmIQLVdhfdLq5CvH5XYzwfShb7b5NkBa5JVsIYg+tmm/
+YhqQLnigpwSidd7nWIH5S22tQXTc7qU7QfQNF429IPqd3eozINpyW/55ED1F
+OOMaiN6jZ3MdRB+7L3AXRKdvDwfTJZVvfoJojqTJv0C0w94LrpuANNvXw24g
+2mZfTxKIXsXYmwyiA2a5rADRrJsKt4HoIu7E3SD6WWvJERAtve7fBxB9QmnD
+ZxBd0mn8D0Qfqv7FuRkkHqAuDKLzyvPBtETzIxUQfeyIriqIXuF/a1voqVeO
+u/TfbAfRB979rH4DpG86za8B0QAYRK/u
+  "]]
 }, Open  ]]
 },
 WindowSize->{740, 860},
@@ -698,7 +694,7 @@ Cell[CellGroupData[{
 Cell[579, 22, 259, 5, 148, "Title"],
 Cell[841, 29, 24515, 610, 1537, "Input",
  InitializationCell->True],
-Cell[25359, 641, 1747, 34, 114, "Input"]
+Cell[25359, 641, 1280, 30, 131, "Input"]
 }, Open  ]]
 }
 ]
