@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       157,          7]
-NotebookDataLength[     27103,        685]
-NotebookOptionsPosition[     26684,        665]
-NotebookOutlinePosition[     27062,        682]
-CellTagsIndexPosition[     27019,        679]
+NotebookDataLength[     27541,        698]
+NotebookOptionsPosition[     27122,        678]
+NotebookOutlinePosition[     27500,        695]
+CellTagsIndexPosition[     27457,        692]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -387,7 +387,8 @@ Cell[BoxData[{
       RowBox[{"score", "=", 
        RowBox[{"score", "-", 
         RowBox[{"sumOfBets", "[", "]"}]}]}], ";", "\[IndentingNewLine]", 
-      RowBox[{"number", "=", "0"}], ";", "\[IndentingNewLine]", 
+      RowBox[{"number", "=", 
+       RowBox[{"run", "[", "]"}]}], ";", "\[IndentingNewLine]", 
       RowBox[{"s", "=", 
        RowBox[{"examinateBets", "[", "number", "]"}]}], ";", 
       "\[IndentingNewLine]", 
@@ -509,13 +510,23 @@ Cell[BoxData[{
   ";"}], "\[IndentingNewLine]", 
  RowBox[{
   RowBox[{
-   RowBox[{"examinateBetsNumber", "[", "number_", "]"}], ":=", 
+   RowBox[{"examinateBetsNumber", "[", 
+    RowBox[{"number_", "?", 
+     RowBox[{"(", 
+      RowBox[{
+       RowBox[{
+        RowBox[{"#", "\[Equal]", "0"}], "||", 
+        RowBox[{"#", "\[Equal]", "\"\<00\>\""}]}], "&"}], ")"}]}], "]"}], ":=", 
    RowBox[{
     RowBox[{"(", 
      RowBox[{
       SubscriptBox["bet", 
        RowBox[{"ToString", "[", "number", "]"}]], "-", "1"}], ")"}], "*", 
     "35"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"examinateBetsNumber", "[", "number_", "]"}], ":=", "0"}], 
+  ";"}], "\[IndentingNewLine]", 
  RowBox[{
   RowBox[{
    RowBox[{"sumOfBets", "[", "]"}], ":=", 
@@ -624,7 +635,9 @@ Cell[BoxData[{
    3.596048550873929*^9}, {3.59604863983313*^9, 3.596048664130333*^9}, {
    3.5960487923267517`*^9, 3.59604879447056*^9}, {3.596048930770535*^9, 
    3.596049023927949*^9}, {3.5960490578580112`*^9, 3.596049067905518*^9}, {
-   3.5960500071630983`*^9, 3.596050112800026*^9}, 3.596050620088726*^9}],
+   3.5960500071630983`*^9, 3.596050112800026*^9}, 3.596050620088726*^9, {
+   3.596050983325856*^9, 3.596050993048396*^9}, {3.596051061111574*^9, 
+   3.596051113330328*^9}}],
 
 Cell[BoxData[{
  RowBox[{"Row", "[", 
@@ -683,9 +696,9 @@ CellTagsIndex->{}
 Notebook[{
 Cell[CellGroupData[{
 Cell[579, 22, 259, 5, 148, "Title"],
-Cell[841, 29, 24077, 597, 1520, "Input",
+Cell[841, 29, 24515, 610, 1537, "Input",
  InitializationCell->True],
-Cell[24921, 628, 1747, 34, 114, "Input"]
+Cell[25359, 641, 1747, 34, 114, "Input"]
 }, Open  ]]
 }
 ]
